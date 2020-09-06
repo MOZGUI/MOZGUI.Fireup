@@ -14,7 +14,8 @@ For security aims: after installation you can change list of allowed file extens
 - Find Key in Registry **HKEY-CLASSES_ROOT\mozgui-fireup\AllowedExtensions** and add or remove your extensions
 
 ### 2. Inject javascript in CMS pages for change links on-the-fly.
-```<script>
+```markdown
+<script>
 window.onload=function() {
   var links = document.links; // or document.getElementsByTagName("a");
   for (var i=0, n=links.length;i<n;i++) {
