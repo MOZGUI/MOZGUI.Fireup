@@ -15,7 +15,7 @@ For security aims: after installation you can change list of allowed file extens
 ```markdown
 <script>
 window.onload=function() {
-  var links = document.links; // or document.getElementsByTagName("a");
+  var links = document.links;
   for (var i=0, n=links.length;i<n;i++) {
 	   var href = links[i].href;
 	   if (href) {
