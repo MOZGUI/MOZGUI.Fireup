@@ -152,8 +152,8 @@
     <ROW Registry="URLProtocol" Root="0" Key="mozgui-fireup" Name="URL Protocol" Component_="URLProtocol"/>
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
     <ROW Registry="_" Root="0" Key="mozgui-fireup" Value="URL: MOZGUI Protocol" Component_="_"/>
-    <ROW Registry="__1" Root="0" Key="mozgui-fireup\DefaultIcon" Value="[APPDIR]\MOZGUI.Fireup.exe,0" Component_="__1"/>
-    <ROW Registry="__2" Root="0" Key="mozgui-fireup\shell\open\command" Value="[APPDIR]\MOZGUI.Fireup.exe &quot;%1&quot;" Component_="__2"/>
+    <ROW Registry="__1" Root="0" Key="mozgui-fireup\DefaultIcon" Value="[APPDIR]MOZGUI.Fireup.exe,0" Component_="__1"/>
+    <ROW Registry="__2" Root="0" Key="mozgui-fireup\shell\open\command" Value="[APPDIR]MOZGUI.Fireup.exe &quot;%1&quot;" Component_="__2"/>
     <ROW Registry="open" Root="0" Key="mozgui-fireup\shell\open" Name="+" Component_="open"/>
     <ROW Registry="shell" Root="0" Key="mozgui-fireup\shell" Name="+" Component_="shell"/>
   </COMPONENT>
