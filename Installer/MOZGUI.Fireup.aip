@@ -7,6 +7,7 @@
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPPRODUCTICON" Value="icon.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="MOZGUI"/>
     <ROW Property="ProductCode" Value="1033:{0C72525B-0858-4542-9680-62497DF0E3D4} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
@@ -128,6 +129,9 @@
     <ROW Feature_="MainFeature" Component_="open"/>
     <ROW Feature_="MainFeature" Component_="__2"/>
     <ROW Feature_="MainFeature" Component_="AllowedExtensions"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="icon.exe" SourcePath="..\MOZGUI.Fireup\icon.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
