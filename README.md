@@ -6,8 +6,6 @@ Windows users often need to exchange and open links (UNC format) to folders or d
 
 **MOZGUI.Fireup** can help you use any browser for open links in UNC format. 
 
-First step:
-
 ### 1. Install MOZGUI.Fireup
 
 For security aims: after installation you can change list of allowed file extensions:
