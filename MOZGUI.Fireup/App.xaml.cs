@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Windows;
 
@@ -8,13 +10,46 @@ namespace MOZGUI.Fireup
 
     public partial class App : Application
     {
+        private void Fireup(string localPath)
+        {
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo(localPath)
+                {
+                    UseShellExecute = true,
+                    CreateNoWindow = false
+                }
+            };
+            process.Start();
+        }
+
+        private bool checkExtension(string fileNameExtension)
+        {
+            RegistryKey protocol = Registry.ClassesRoot.OpenSubKey("mozgui-fireup");
+            var extensions =  (string)protocol.GetValue("AllowedExtensions");
+            var extList = extensions.Split(';');
+            foreach (var allowedExt in extList)
+            {
+                var trimExt = allowedExt.Trim();
+                if (!String.IsNullOrWhiteSpace(allowedExt)) 
+                {
+                    if (fileNameExtension == trimExt)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+            
+        }
+
         protected override void OnStartup(StartupEventArgs e)
         {
             try
             {
-                #if DEBUG
-                       MessageBox.Show("This message displayed for debug version");
-                #endif
+#if DEBUG
+                MessageBox.Show("This message displayed for debugging");
+#endif
 
                 if (e.Args != null && e.Args.Count() > 0)
                 {
@@ -25,15 +60,33 @@ namespace MOZGUI.Fireup
                     {
                         var localPath = uri.LocalPath;
 
-                        var process = new Process
+                        Uri fileUri = new Uri(localPath);
+
+                        FileInfo fi = new FileInfo(fileUri.LocalPath);
+                        bool fileExists = fi.Exists;
+                        if (fileExists)
                         {
-                            StartInfo = new ProcessStartInfo(localPath)
+                            //File
+                            var extension = Path.GetExtension(fileUri.LocalPath);
+                            if (!String.IsNullOrWhiteSpace(extension) && extension != ".")
                             {
-                                UseShellExecute = true,
-                                CreateNoWindow = false
+                                var check = checkExtension(extension.Replace(".",""));
+                                if (check)
+                                {
+                                    Fireup(fileUri.LocalPath);
+                                }
                             }
-                        };
-                        process.Start();
+                        }
+                        else
+                        {
+                            DirectoryInfo di = new DirectoryInfo(fileUri.LocalPath);
+                            bool dirExists = di.Exists;
+                            if (dirExists)
+                            {
+                                //Direcory
+                                Fireup(fileUri.LocalPath);
+                            }
+                        }
                     }
                 }
                 else
@@ -49,3 +102,4 @@ namespace MOZGUI.Fireup
         }
     }
 }
+

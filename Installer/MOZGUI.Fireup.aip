@@ -29,6 +29,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{BCBC3785-24E2-4DD8-B2FE-05E93707279C}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="AllowedExtensions" ComponentId="{CFEEF38B-69FA-4C98-810D-33DEEA4514B2}" Directory_="APPDIR" Attributes="4" KeyPath="AllowedExtensions"/>
     <ROW Component="MOZGUI.Fireup.exe" ComponentId="{21FBE850-1BC0-4203-B5E9-D8D2003D80F3}" Directory_="APPDIR" Attributes="0" KeyPath="MOZGUI.Fireup.exe"/>
     <ROW Component="MOZGUI.Fireup.exe.config" ComponentId="{665EA11B-78A3-42D2-935A-2F4346CA1172}" Directory_="APPDIR" Attributes="0" KeyPath="MOZGUI.Fireup.exe.config" Type="0"/>
     <ROW Component="ProductInformation" ComponentId="{F0751B5B-1FBC-453A-8455-E7BDE5729BD4}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
@@ -126,6 +127,7 @@
     <ROW Feature_="MainFeature" Component_="shell"/>
     <ROW Feature_="MainFeature" Component_="open"/>
     <ROW Feature_="MainFeature" Component_="__2"/>
+    <ROW Feature_="MainFeature" Component_="AllowedExtensions"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
@@ -148,6 +150,7 @@
     <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AllowedExtensions" Root="0" Key="mozgui-fireup" Name="AllowedExtensions" Value="txt;rtf;doc;docx;xls;xlsx;ppt;pptx;htm;html;" Component_="AllowedExtensions"/>
     <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
     <ROW Registry="URLProtocol" Root="0" Key="mozgui-fireup" Name="URL Protocol" Component_="URLProtocol"/>
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
