@@ -1,9 +1,30 @@
-## Welcome to GitHub Pages
+## MOZGUI.Fireup
 
-You can use the [editor on GitHub](https://github.com/MOZGUI/MOZGUI.Fireup/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+MOZGUI.Fireup is developed to run applications via a web links with a custom protocol.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Windows users often need to exchange and open links (UNC format) to folders or documents on the local network (UNC) via corporate CMS. Now it can be worked in IE 11 only.
 
+MOZGUI.Fireup can help you use any browser for open links in UNC format. 
+
+First step:
+
+1. Install MOZGUI.Fireup
+For security aims: after installation you can change list of allowed file extensions:
+- Find Key in Registry HKEY-CLASSES_ROOT\mozgui-fireup\AllowedExtensions and add or remove your extensions
+
+2. Inject javascript in CMS pages for change links on-the-fly.
+```<script>
+window.onload=function() {
+  var links = document.links; // or document.getElementsByTagName("a");
+  for (var i=0, n=links.length;i<n;i++) {
+	   var href = links[i].href;
+	   if (href) {
+		 links[i].href = href.replace(/^(file:(\/)+)/,"mozgui-fireup:");
+	   }
+  }
+}
+</script>
+```
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
