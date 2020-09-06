@@ -9,7 +9,7 @@ Windows users often need to exchange and open links (UNC format) to folders or d
 **1. Install MOZGUI.Fireup**
 
 For security reasons, after installation you can change list of allowed file extensions:
-- Find Key in Registry **HKEY-CLASSES_ROOT\mozgui-fireup\AllowedExtensions** and add or remove your file extensions
+- Find key in Registry **HKEY-CLASSES_ROOT\mozgui-fireup\AllowedExtensions** and add or remove your file extensions
 
 Note: Default allowed file extensions: txt;rtf;doc;docx;xls;xlsx;ppt;pptx;htm;html;
 
