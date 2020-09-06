@@ -35,19 +35,15 @@ namespace MOZGUI.Fireup
                         };
                         process.Start();
                     }
-                    else
-                    {
-
-                    }
                 }
                 else
                 {
                     base.Shutdown();
                 }
             }
-            catch (Exception ex)
+            catch
             {
-
+                //TODO
             }
             base.Shutdown();
         }
