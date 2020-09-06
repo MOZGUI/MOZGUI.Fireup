@@ -9,6 +9,7 @@ MOZGUI.Fireup can help you use any browser for open links in UNC format.
 First step:
 
 1. Install MOZGUI.Fireup
+
 For security aims: after installation you can change list of allowed file extensions:
 - Find Key in Registry HKEY-CLASSES_ROOT\mozgui-fireup\AllowedExtensions and add or remove your extensions
 
