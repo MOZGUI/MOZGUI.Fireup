@@ -10,6 +10,7 @@ Windows users often need to exchange and open links (UNC format) to folders or d
 
 For security reasons, after installation you can change list of allowed file extensions:
 - Find Key in Registry **HKEY-CLASSES_ROOT\mozgui-fireup\AllowedExtensions** and add or remove your file extensions
+
 Note: Default allowed file extensions: txt;rtf;doc;docx;xls;xlsx;ppt;pptx;htm;html;
 
 **2. Inject JavaScript into your CMS pages to enable changing UNC links on-the-fly.**
