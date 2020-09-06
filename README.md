@@ -32,7 +32,9 @@ window.onload=function() {
 **MOZGUI.Fireup installer** registers custom URL protocol (mozgui-fireup) for launching **MOZGUI.Fireup** with a parameter.
 Example of link with custom protocol: 
 ```<a href="mozgui-fireup:parameter">```, where parameter is a path or URL to folder or file (```<a href="mozgui-fireup:file://SRV/Share/document.docx">```).
+
 After clicking on this link **MOZGUI.Fireup** will start process to open "parameter" url using default program for file extension as part of this url (when url is folder, url will be opened by explorer).
+
 To exclude possibility of starting executable files, list of allowed file extensions is restricted.
 
 
