@@ -2,7 +2,9 @@
 
 **MOZGUI.Fireup** is developed to run applications via a web links with a custom protocol.
 
-Windows users often need to exchange and open links (UNC format) to folders or documents in the local network via corporate CMS. Now it can be worked in IE 11 only.
+Windows users often need to exchange and open links (UNC format) to folders or documents in the local network via corporate CMS. 
+
+Now it can be worked in IE 11 only.
 
 **MOZGUI.Fireup** can help you to use any internet browser for opening links in UNC format. 
 
