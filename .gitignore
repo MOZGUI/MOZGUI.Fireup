@@ -234,8 +234,8 @@ FakesAssemblies/
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
 
-*/Installer/SetupFiles
-*/Installer/XmlEditor-cache
+Installer/SetupFiles
+Installer/XmlEditor-cache
 
 # LightSwitch generated files
 GeneratedArtifacts/
