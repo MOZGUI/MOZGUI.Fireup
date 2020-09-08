@@ -33,7 +33,8 @@ namespace MOZGUI.Fireup
                 var trimExt = allowedExt.Trim();
                 if (!String.IsNullOrWhiteSpace(allowedExt)) 
                 {
-                    if (fileNameExtension == trimExt)
+                    
+                    if (String.Equals(fileNameExtension, trimExt, StringComparison.OrdinalIgnoreCase))
                     {
                         return true;
                     }
